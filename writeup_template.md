@@ -11,6 +11,14 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
 
+[image2]: ./test_images/Gaussian.png "Gassian"
+
+[image3]: ./test_images/Edges.png "Canny on original image withut noise"
+
+[image4]: ./test_images/Mask_Edges.png "Region of interest"
+
+[image5]: ./test_images/Lines_Edges.png "Region of interest"
+
 ---
 
 ### Reflection
@@ -27,7 +35,7 @@ I import the respective packages and load a test image. Matplotlib read iage as 
 
 To remove the noises from the gray image, it was appled cv2.GaussianBlur
 
-[image1]: ./test_images/Gaussian.png "Gassian"
+![alt text][image2]
 
 ### 3. Apply Canny edges
 
@@ -38,7 +46,7 @@ Canny edges method is applied t find all the lines in images Without noise, the 
 
 Canny edges method is applied t find all the
 
-[image2]: ./test_images/Edges.png "Canny on original image withut noise"
+![alt text][image3]
 
 
 
@@ -46,7 +54,7 @@ Canny edges method is applied t find all the
 ### 5. Select intereste region
 In this case, the lane lines edges is located in a trapezoid. It was defined a trapezoid to restrict the region of interest.
 
-[image3]: ./test_images/Mask_Edges.png "Region of interest"
+![alt text][image4]
 
 ### 6. Generate HoughLines
 
@@ -55,7 +63,8 @@ Function used to remove short and useless edges (Input parameter)
 ### 7. Apply lines on the Image
 In this case, the lane lines edges is located in a trapezoid. It was defined a trapezoid to restrict the region of interest.
 
-[image4]: ./test_images/Lines_Edges.png "Region of interest"
+
+![alt text][image5]
 
 
 
