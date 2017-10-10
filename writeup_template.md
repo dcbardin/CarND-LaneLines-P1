@@ -1,11 +1,5 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
@@ -23,25 +17,46 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+I import the respective packages and load a test image. Matplotlib read iage as RGB and cv2 read the iage as GBR. 
 
 ![alt text][image1]
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Convert image to gray and remove the noises
 
 
-One potential shortcoming would be what would happen when ... 
+To remove the noises from the gray image, it was appled cv2.GaussianBlur
 
-Another shortcoming could be ...
+[image1]: ./test_images/Gaussian.png "Gassian"
+
+### 3. Apply Canny edges
+
+Canny edges method is applied t find all the lines in images Without noise, the edges of lane line is very clear.
 
 
-### 3. Suggest possible improvements to your pipeline
+### 4. Apply Canny edges
 
-A possible improvement would be to ...
+Canny edges method is applied t find all the
 
-Another potential improvement could be to ...
+[image2]: ./test_images/Edges.png "Canny on original image withut noise"
+
+
+
+
+### 5. Select intereste region
+In this case, the lane lines edges is located in a trapezoid. It was defined a trapezoid to restrict the region of interest.
+
+[image3]: ./test_images/Mask_Edges.png "Region of interest"
+
+### 6. Generate HoughLines
+
+Function used to remove short and useless edges (Input parameter)
+
+### 7. Apply lines on the Image
+In this case, the lane lines edges is located in a trapezoid. It was defined a trapezoid to restrict the region of interest.
+
+[image4]: ./test_images/Lines_Edges.png "Region of interest"
+
+
+
+
